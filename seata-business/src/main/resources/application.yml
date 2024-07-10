@@ -1,0 +1,23 @@
+server:
+  port: 2004
+spring:
+  application:
+    name: seata-business
+  main:
+    allow-circular-references: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.17.128:8848
+
+seata:
+  registry:
+    nacos:
+      server-addr: 192.168.17.128:8848
+      namespace: 515feab8-9cbd-4819-87a9-9d4ada6c575d
+      group: seata_group
+      application: seata-server
+  tx-service-group: default_tx_group
+  service:
+    vgroup-mapping:
+      default_tx_group: default
